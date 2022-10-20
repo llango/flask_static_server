@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ICLR论文查询</title>
+    <meta name="author" content="akaros团队" />
+    <meta name="description" content="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto" rel="stylesheet">-->
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" id="logo" class="img-fluid" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class='nav-link' href='#' onclick="window.location='index.html'+window.location.search">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='#' onclick="window.location='charts.html'+window.location.search">图表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='?conf=iclr2017'>ICLR 2017</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href='?conf=iclr2018'>ICLR 2018</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href='?conf=iclr2019'>ICLR 2019</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='https://www.aipha.cn'>顿数</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='https://www.langoft.com'>Akaros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container">
+            <div class="heading-wrapper">
+                <h1></h1>
+                <p>列出ICLR该年度的论文，可以针对论文进行过滤查询，同时可根据不同的方式进行排序，所有数据来源ICLR，包括排名、评级、差额、可信度。如果你发现什么问题可以联系akaros团队
+                    <a class="contact" href="mailto:open@akaros.cn">open@akaros.cn</a>。</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero -->
+    <section>
+        <div class="container">
+            <div>
+                <div id="histogram"></div>
+                <div id="cumulative"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="heading-wrapper">
+                <h3>联系我们</h3>
+                <p>如果你想了解更多关于人工智能方面信息，欢迎关注如下公众号，或者访问<a href="https://www.aipha.cn">顿数</a>。</p>
+                <div>
+                    <img src="assets/images/weixin1.jpg">
+                </div>
+            </div>
+            <div class="row topmargin-lg">
+                <div class="col-md-4">
+                    <small>© Akaros团队</small>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <small>由<a href="https://www.langoft.com">Akaros团队</a>创建</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+    <script src="js/charts.js"></script>
+</body>
+
+</html>

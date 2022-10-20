@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="" />
+    <meta name="description" content="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto" rel="stylesheet">-->
+
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" />
+
+    <title>ICLR论文查询</title>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" id="logo" class="img-fluid" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="icon ion-md-menu"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class='nav-link' href='#' onclick="window.location='index.html'+window.location.search">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='#' onclick="window.location='charts.html'+window.location.search">图表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='?conf=iclr2017'>ICLR 2017</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href='?conf=iclr2018'>ICLR 2018</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href='?conf=iclr2019'>ICLR 2019</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='https://www.aipha.cn'>顿数</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='https://www.langoft.com'>Akaros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container">
+            <div class="heading-wrapper">
+                <h1></h1>
+                <p>列出ICLR该年度的论文，可以针对论文进行过滤查询，同时可根据不同的方式进行排序，所有数据来源ICLR，包括排名、评级、差额、可信度。如果你发现什么问题可以联系akaros团队
+                    <a class="contact" href="mailto:open@akaros.cn">open@akaros.cn</a>。</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero -->
+    <section>
+        <div class="container">
+            <h3>ICLR论文查询</h3>
+
+            <div id="demo">
+                <div id="users" class='table-responsive-vertical shadow-z-1'>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id='search' class="form-control form-control-lg form-control-borderless search form-style-6" placeholder="搜索主题或关键字" />
+                        <!--<input id='search' class="form-control form-control-lg form-control-borderless"  placeholder="Search topics or keywords">-->
+                        </div>
+                        <div class="col-md-6"><p class="result_card">查询结果有: <span id='search_results' class="result_num">0</span>条。</p></div>
+                    </div>
+                    <div style="margin-bottom:30px;"></div>
+                    <table id='table' class='table table-hover table-mc-light-blue'>
+                        <thead>
+                            <tr>
+                                <th class="sort" data-sort="rank">排名</th>
+                                <th class="sort" data-sort="rating"> 综合评级 </th>
+                                <th class="sort" data-sort="title">标题</th>
+                                <th class="sort" data-sort="rank">拆分评级</th>
+                                <th class="sort" data-sort="variance"> 差额 </th>
+                                <th class="sort" data-sort="rank">可信度</th>
+                                <th class="sort" data-sort="decision">决定</th>
+                                <th class="sort" data-sort="citations">引用</th>
+                                <th class="sort" data-sort="karpathy">karpathy</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <!-- IMPORTANT, class="list" have to be at tbody -->
+                        <tbody class="list">
+
+                        </tbody>
+                    </table>
+                    <button class="primary-btn" id='showAll' onclick="showAll()">显示所有论文</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="heading-wrapper">
+                <h3>联系我们</h3>
+                <p>如果你想了解更多关于人工智能方面信息，欢迎关注如下公众号，或者访问<a href="https://www.aipha.cn">顿数</a>。</p>
+                <div>
+                    <img src="assets/images/weixin1.jpg">
+                </div>
+            </div>
+            <div class="row topmargin-lg">
+                <div class="col-md-4">
+                    <small>© Akaros团队</small>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <small>由<a href="https://www.langoft.com">Akaros团队</a>创建</small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Footer -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="js/list.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
